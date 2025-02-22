@@ -9,7 +9,7 @@ export const algorithm11 = ( initialDigits: string, verificationDigitString: str
   if ( !coefficients ) {
     throw new Error('Invalid identification type');
   }
-  const verifierNumber = Number(verificationDigitString);
+  const verifierNumber = parseInt(verificationDigitString);
   const digits = initialDigits.split('').map(Number);
 
   if (digits.length !== coefficients.length) {

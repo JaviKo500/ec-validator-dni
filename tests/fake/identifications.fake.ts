@@ -21,3 +21,23 @@ export const invalidRUC:  string [] = [
   '0105566',
   '010556604A',
 ];
+
+export const VALID_RUC_SOCIETY_PRIVATE:  string [] = [
+  '0992256230001',
+  '1790450635001',
+];
+
+export const INVALID_RUC_SOCIETY_PRIVATE:  string [] = [
+  '0992256234001',
+  '1790450637001',
+];
+
+export const VALID_RUC_PUBLIC_SOCIETY:  string [] = [
+  '1760004650001',
+  '1760001120001',
+];
+
+export const INVALID_RUC_PUBLIC_SOCIETY:  string [] = [
+  '1760004680001',
+  '1760001110001',
+];
