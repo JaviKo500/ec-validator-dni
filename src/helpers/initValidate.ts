@@ -29,5 +29,17 @@ const VALIDATION_RULES: Record<TypeIdentification, ValidationRule> = {
   [TypeIdentification.RUC]: {
     pattern: /^\d{13}$/,
     errorMessage: 'Identification not valid min 13 digits, max 13 digits and only numbers'
-  }
+  },
+  [TypeIdentification.RUC_PERSON_NATURAL]: {
+    pattern: /^\d{13}$/,
+    errorMessage: 'Identification not valid min 13 digits, max 13 digits and only numbers'
+  },
+  [TypeIdentification.RUC_SOCIETY_PRIVATE]: {
+    pattern: /^\d{13}$/,
+    errorMessage: 'Identification not valid min 13 digits, max 13 digits and only numbers'
+  },
+  [TypeIdentification.RUC_PUBLIC_SOCIETY]: {
+    pattern: /^\d{13}$/,
+    errorMessage: 'Identification not valid min 13 digits, max 13 digits and only numbers',
+  },
 };
