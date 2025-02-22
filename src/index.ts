@@ -1,2 +1,2 @@
-export * from './validations/dni-validation';
-export * from './validations/ruc-validations';
+export * from './validations/dniValidation';
+export * from './validations/rucValidations';
