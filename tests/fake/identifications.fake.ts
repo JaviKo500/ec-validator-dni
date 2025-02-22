@@ -41,3 +41,15 @@ export const INVALID_RUC_PUBLIC_SOCIETY:  string [] = [
   '1760004680001',
   '1760001110001',
 ];
+
+export const VALID_ANY_RUC:  string [] = [
+  '0105566046001',
+  '1760004650001',
+  '0992256230001',
+];
+
+export const INVALID_ANY_RUC:  string [] = [
+  '0105566001',
+  '1760004611001',
+  '0992256223001',
+];
