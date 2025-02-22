@@ -1,6 +1,6 @@
 import { initValidate } from "../../src/helpers";
 import { TypeIdentification } from "../../src/interfaces";
-import { invalidDNI, invalidRUC, validDNI, validRUC } from "../fake/indetifications.fake";
+import { invalidDNI, invalidRUC, validDNI, validRUC } from "../fake/identifications.fake";
 
 describe('InitValidate.test', () => {
   test( 'should be trigger error when identification is empty', () => {
