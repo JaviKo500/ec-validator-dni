@@ -14,6 +14,10 @@ describe('InitValidate.test', () => {
     expect( ()=> initValidate('  ', TypeIdentification.DNI) ).toThrowError(messageErrorEmpty);
     expect( ()=> initValidate('010556604 ', TypeIdentification.DNI) ).toThrowError(messageError);
   });
+  
+  test( 'should be trigger when rule is not valid', () => {
+    expect( ()=> initValidate('0105566046', 'RUC_DNI' as any) ).toThrowError('Identification type not valid');
+  });
 
   test( 'should be trigger error when identification is not valid type DNI', () => {
     const messageError = 'Identification not valid min 10 digits, max 10 digits and only numbers';
