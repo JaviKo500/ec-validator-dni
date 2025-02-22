@@ -9,6 +9,6 @@ export const validateThirdDigit = (thirdDigit: string, typeIdentification: TypeI
       break;
   
     default:
-      break;
+      throw new Error('Invalid identification type');
   }
 }
