@@ -1,6 +1,6 @@
 import { initValidate } from "../../src/helpers";
 import { TypeIdentification } from "../../src/interfaces";
-import { invalidDNI, invalidRUC, validDNI, validRUC } from "../fake/identifications.fake";
+import { INVALID_DNI, INVALID_RUC, VALID_DNI, VALID_RUC } from "../fake/identifications.fake";
 
 describe('InitValidate.test', () => {
   test( 'should be trigger error when identification is empty', () => {
@@ -17,20 +17,20 @@ describe('InitValidate.test', () => {
 
   test( 'should be trigger error when identification is not valid type DNI', () => {
     const messageError = 'Identification not valid min 10 digits, max 10 digits and only numbers';
-    invalidDNI.forEach(item => {
+    INVALID_DNI.forEach(item => {
       expect( ()=> initValidate(item, TypeIdentification.DNI) ).toThrowError(messageError);
     });
   });
   
   test( 'should not be trigger error when identification is valid type DNI', () => {
-    validDNI.forEach(item => {
+    VALID_DNI.forEach(item => {
       expect( ()=> initValidate(item, TypeIdentification.DNI) ).not.toThrowError();
     });
   });
 
   test( 'should be trigger error when identification is not valid type RUC', () => {
     const messageError = 'Identification not valid min 13 digits, max 13 digits and only numbers';
-    invalidRUC.forEach(item => {
+    INVALID_RUC.forEach(item => {
       expect( ()=> initValidate(item, TypeIdentification.RUC) ).toThrowError(messageError);
       expect( ()=> initValidate(item, TypeIdentification.RUC_PERSON_NATURAL) ).toThrowError(messageError);
       expect( ()=> initValidate(item, TypeIdentification.RUC_SOCIETY_PRIVATE) ).toThrowError(messageError);
@@ -39,7 +39,7 @@ describe('InitValidate.test', () => {
   });
 
    test( 'should not be trigger error when identification is valid type RUC', () => {
-    validRUC.forEach(item => {
+    VALID_RUC.forEach(item => {
       expect( ()=> initValidate(item, TypeIdentification.RUC) ).not.toThrowError();
       expect( ()=> initValidate(item, TypeIdentification.RUC_PERSON_NATURAL) ).not.toThrowError();
       expect( ()=> initValidate(item, TypeIdentification.RUC_SOCIETY_PRIVATE) ).not.toThrowError();

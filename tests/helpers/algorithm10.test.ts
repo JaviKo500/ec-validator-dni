@@ -1,5 +1,5 @@
 import { algorithm10 } from "../../src/helpers";
-import { invalidDNI, invalidRUC, validDNI, validRUC } from "../fake/identifications.fake";
+import { INVALID_DNI, INVALID_RUC, VALID_DNI, VALID_RUC } from "../fake/identifications.fake";
 
 describe('Algorithm10.test', () => {
   test( 'should be trigger error when first digits is empty', () => {
@@ -15,20 +15,20 @@ describe('Algorithm10.test', () => {
   });
 
   test( 'should be true when identification is valid', () => {
-    validDNI.forEach(item => {
+    VALID_DNI.forEach(item => {
       expect( algorithm10(item.substring(0,9), item[item.length-1]) ).toBe(true);
     });
-    validRUC.forEach(item => {
+    VALID_RUC.forEach(item => {
       expect( algorithm10(item.substring(0,9), item.substring(9,10)) ).toBe(true);
     });
   });
   
   test( 'should be trigger error when identification is not valid', () => {
-    invalidDNI.forEach(item => {
+    INVALID_DNI.forEach(item => {
       expect( ()=> algorithm10(item.substring(0,9), item[item.length-1]) ).toThrowError('Invalid verification digit');
     });
     expect( ()=> algorithm10('094236285', '5') ).toThrowError('Invalid verification digit');
-    invalidRUC.forEach(item => {
+    INVALID_RUC.forEach(item => {
       expect( ()=> algorithm10(item.substring(0,9), item.substring(9,10)) ).toThrowError('Invalid verification digit');
     });
   });
