@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "tsnd --respawn --clear examples/index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@vitest/coverage-v8": "^3.0.6",
     "vitest": "^3.0.6"
   }
 }
