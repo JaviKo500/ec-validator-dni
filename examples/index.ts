@@ -1,4 +1,5 @@
 import { dniValidation, rucValidation } from '../src';
+import { TypeIdentification } from '../src/interfaces';
 
 const listDni = [
   '0105566046',
@@ -26,6 +27,6 @@ const listRuc = [
 ];
 
 listRuc.forEach((ruc) => {
-  const isValid = rucValidation(ruc);
+  const isValid = rucValidation(ruc, TypeIdentification.RUC_PERSON_NATURAL);
   console.log(isValid);
 });

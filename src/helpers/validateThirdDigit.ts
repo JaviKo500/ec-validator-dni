@@ -3,6 +3,7 @@ export const validateThirdDigit = (thirdDigit: string, typeIdentification: TypeI
   const code = parseInt(thirdDigit);
   switch (typeIdentification) {
     case TypeIdentification.DNI:
+    case TypeIdentification.RUC_PERSON_NATURAL:
       if (code < 0 || code > 5) {
         throw new Error('Invalid third digit must be between 0 and 5');
       }
