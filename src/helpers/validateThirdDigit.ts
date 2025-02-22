@@ -1,6 +1,9 @@
 import { TypeIdentification } from '../interfaces';
 export const validateThirdDigit = (thirdDigit: string, typeIdentification: TypeIdentification) => {
   const code = parseInt(thirdDigit);
+  if (isNaN(code)) {
+    throw new Error('Invalid third digit must be a number');
+  }
   switch (typeIdentification) {
     case TypeIdentification.DNI:
     case TypeIdentification.RUC_PERSON_NATURAL:
