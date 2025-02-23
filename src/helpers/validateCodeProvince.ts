@@ -1,3 +1,15 @@
+/**
+ * Validates the province code (first two digits) of an Ecuadorian identification number.
+ * Ecuador has 24 provinces, each identified by a code from 00 to 24.
+ * 
+ * @param {string} provinceCode - The two-digit province code to validate
+ * 
+ * @throws {Error} If the province code is not a valid number
+ * @throws {Error} If the province code is not between 00 and 24
+ * 
+ * @returns {void}
+ */
+
 export const validateCodeProvince = (provinceCode: string) => {
   const code = parseInt(provinceCode);
 

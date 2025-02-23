@@ -1,6 +1,14 @@
 import { algorithm10, initValidate, validateCodeProvince, validateThirdDigit } from '../helpers';
 import { Result, TypeIdentification } from '../interfaces';
 
+/**
+ * Validates an Ecuadorian DNI (Cédula de Identidad) number.
+ * @param {string} dni - The DNI number to validate
+ * 
+ * @returns {Result} An object containing:
+ *   - isValid: boolean indicating if the DNI is valid
+ *   - errorMessage?: string with error details if validation fails
+ */
 
 export const dniValidation = (dni: string): Result => {
   try {

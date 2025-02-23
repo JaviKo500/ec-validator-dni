@@ -1,6 +1,17 @@
 import { algorithm10, algorithm11, initValidate, validateCodeEstablishment, validateCodeProvince, validateThirdDigit } from '../helpers';
 import { Result, TypeIdentification } from '../interfaces';
 
+/**
+ * Validates a RUC (Registro Único de Contribuyentes) based on its type.
+ * 
+ * @param {string} ruc - The RUC to be validated.
+ * @param {TypeIdentification} typeIdentification - The type of RUC to validate (e.g., natural person, private society, public society).
+ * 
+ * @returns {Result} An object containing:
+ *   - isValid: boolean indicating if the DNI is valid
+ *   - errorMessage?: string with error details if validation fails
+ */
+
 export const validateRucByType = ( ruc: string, typeIdentification: TypeIdentification ): Result => {
   try {
       initValidate( ruc, TypeIdentification.RUC );
@@ -34,6 +45,16 @@ export const validateRucByType = ( ruc: string, typeIdentification: TypeIdentifi
       isValid: true,
     };
 }
+
+/**
+ * Validates a RUC (Registro Único de Contribuyentes) by checking all possible types.
+ * 
+ * @param {string} ruc - The RUC to be validated.
+ * 
+ * @returns {Result} An object containing:
+ *   - isValid: boolean indicating if the DNI is valid
+ *   - errorMessage?: string with error details if validation fails
+ */
 
 export const validateRuc = ( ruc: string ): Result => {
   const validRucNatural = validateRucByType(ruc, TypeIdentification.RUC_PERSON_NATURAL);
