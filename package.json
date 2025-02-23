@@ -9,9 +9,9 @@
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "javikogutierrez64@gmail.com (https://github.com/JaviKo500)",
   "license": "ISC",
-  "description": "",
+  "description": "Validation of Ecuadorian identification documents (ID card and RUC)",
   "devDependencies": {
     "@vitest/coverage-v8": "^3.0.6",
     "vitest": "^3.0.6"
