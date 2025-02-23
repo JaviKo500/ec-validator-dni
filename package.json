@@ -1,6 +1,6 @@
 {
   "name": "ec-validator-dni",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -10,7 +10,24 @@
     "coverage": "vitest run --coverage",
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
-  "keywords": [],
+  "keywords": [
+    "Ecuador",
+    "identification",
+    "document",
+    "dni",
+    "cedula",
+    "ruc",
+    "persona natural",
+    "validation"
+  ],
+  "homepage": "https://github.com/JaviKo500/ec-validator-dni",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaviKo500/ec-validator-dni.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JaviKo500/ec-validator-dni/issues"
+  },
   "author": "javikogutierrez64@gmail.com (https://github.com/JaviKo500)",
   "license": "ISC",
   "description": "Validation of Ecuadorian identification documents (ID card and RUC)",
