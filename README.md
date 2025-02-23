@@ -27,6 +27,23 @@ pnpm add ec-validator-dni
 
 ## Usage
 
+Once the package is installed, you can import the library using `import` or `require` approach:
+
+```ts
+import { dniValidation } from 'ec-validator-dni';
+console.log(ecValidatorDni.dniValidation('010011111'));
+```
+
+If you use `require` for importing, **only default export is available**:
+
+```js
+const ecValidatorDni = require('ec-validator-dni');
+
+console.log(ecValidatorDni.dniValidation('010011111'));
+```
+
+
+
 ### ID Card Validation
 
 ```typescript
