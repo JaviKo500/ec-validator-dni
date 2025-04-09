@@ -27,9 +27,12 @@ export const algorithm10 = (firstDigits: string, verificationDigitString: string
     }
     total += result;
   }
+  
   const residue = total % 10;
-  const verificationDigitResult = 10 - residue;
-
+  let verificationDigitResult = 0;
+  if ( residue !== 0 ) {
+    verificationDigitResult = 10 - residue;
+  }
   if (verificationDigitResult !== verificationDigit) {
     throw new Error('Invalid verification digit');
   }
