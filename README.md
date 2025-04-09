@@ -61,15 +61,18 @@ import { validateRucByType, validateRuc, TypeIdentification } from 'ec-validator
 const resultValidRuc = validateRuc('1234567890001'); 
 console.log(resultValidRuc);// { isValid: true or false, errorMessage?: string }
 // Validate RUC for natural person
-const resultValidNatural = validateRucByType('1234567890001', TypeIdentification.RUC_PERSON_NATURAL); 
+const resultValidNatural = 
+  validateRucByType('1234567890001', TypeIdentification.RUC_PERSON_NATURAL); 
 console.log(resultValidNatural);// { isValid: true or false, errorMessage?: string }
 
 // Validate RUC for private company
-const resultValidPrivate = validateRucByType('1234567890001', TypeIdentification.RUC_SOCIETY_PRIVATE); 
+const resultValidPrivate = 
+  validateRucByType('1234567890001', TypeIdentification.RUC_SOCIETY_PRIVATE); 
 console.log(resultValidPrivate);// { isValid: true or false, errorMessage?: string }
 
 // Validate RUC for public entity
-const resultValidPublic = validateRucByType('1234567890001', TypeIdentification.RUC_PUBLIC_SOCIETY); 
+const resultValidPublic = 
+  validateRucByType('1234567890001', TypeIdentification.RUC_PUBLIC_SOCIETY); 
 console.log(resultValidPublic);// { isValid: true or false, errorMessage?: string }
 ```
 
