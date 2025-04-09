@@ -5,6 +5,7 @@ describe('Index.test', () => {
       'dniValidation',
       'validateRucByType',
       'validateRuc',
+      'TypeIdentification',
     ];
     expect(Object.keys(index)).toEqual(expectedExports);
   });
