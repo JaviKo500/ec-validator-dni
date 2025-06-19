@@ -2,6 +2,31 @@ import { algorithm10, algorithm11, initValidate, validateCodeEstablishment, vali
 import { Result, TypeIdentification } from '../interfaces';
 
 /**
+ * Validates possibly a valid RUC (Registro Único de Contribuyentes).
+ * 
+ * @param {string} ruc - The RUC to be validated.
+ * 
+ * @returns {Result} An object containing:
+ *   - isValid: boolean indicating if the DNI is valid
+ *   - errorMessage?: string with error details if validation fails
+ */
+
+export const isPossiblyValidRuc = (ruc: string): Result => {
+  try {
+    initValidate( ruc, TypeIdentification.RUC );
+    validateCodeProvince(ruc.substring(0, 2));
+     return {
+      isValid: true,
+    };
+  } catch (error: any) {
+    return {
+      isValid: false,
+      errorMessage: error?.message || 'Invalid RUC',
+    }
+  }
+}
+
+/**
  * Validates a RUC (Registro Único de Contribuyentes) based on its type.
  * 
  * @param {string} ruc - The RUC to be validated.
@@ -38,7 +63,7 @@ export const validateRucByType = ( ruc: string, typeIdentification: TypeIdentifi
     } catch (error: any) {
       return {
         isValid: false,
-        errorMessage: error.message || 'Invalid RUC',
+        errorMessage: error?.message || 'Invalid RUC',
       }
     }
     return {

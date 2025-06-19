@@ -1,8 +1,8 @@
 import { validateCodeProvince } from '../../src/helpers';
 
 describe('ValidateCodeProvince.test', () => {
-  const messageError = 'Invalid province code (first 2 digits) must be between 00 and 24';
-  const messageErrorNaN = 'Invalid province code (first 2 digits) must be a number and between 00 and 24';
+  const messageError = 'Invalid province code (first 2 digits) must be between 00 - 24 and 30 for foreigner';
+  const messageErrorNaN = 'Invalid province code (first 2 digits) must be a number and between 00 - 24 and 30 for foreigner';
   test( 'should be trigger error when province code is empty', () => {
     expect( ()=> validateCodeProvince('') ).toThrowError(messageErrorNaN);
   });

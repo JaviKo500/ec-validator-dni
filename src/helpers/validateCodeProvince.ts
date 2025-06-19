@@ -14,9 +14,10 @@ export const validateCodeProvince = (provinceCode: string) => {
   const code = parseInt(provinceCode);
 
   if( isNaN(code) ) {
-    throw new Error('Invalid province code (first 2 digits) must be a number and between 00 and 24');
+    throw new Error('Invalid province code (first 2 digits) must be a number and between 00 - 24 and 30 for foreigners');
   }
+  if ( code === 30 ) return;
   if (code < 0 || code > 24) {
-    throw new Error('Invalid province code (first 2 digits) must be between 00 and 24');
+    throw new Error('Invalid province code (first 2 digits) must be between 00 - 24 and 30 for foreigners');
   }
 }

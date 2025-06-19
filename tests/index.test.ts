@@ -3,6 +3,7 @@ describe('Index.test', () => {
   test( 'should be export all validations', () => {
     const expectedExports = [
       'dniValidation',
+      'isPossiblyValidRuc',
       'validateRucByType',
       'validateRuc',
       'TypeIdentification',

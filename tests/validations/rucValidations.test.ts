@@ -75,4 +75,16 @@ describe('RucValidations.test', () => {
       expect(result).toMatchObject({  isValid: false, errorMessage: expect.any(String) });
     });
   });
+
+  test( 'should be true when ruc is possibly valid', () => {
+    const result = validateRuc('0105566046001');
+    expect(result.isValid).toBe(true);
+    expect(result).toMatchObject({  isValid: true });
+  });
+
+  test( 'should be true when ruc is possibly invalid', () => {
+    const result = validateRuc('3305566046001');
+    expect(result.isValid).toBe(false);
+    expect(result).toMatchObject({  isValid: false, errorMessage: expect.any(String) });
+  });
 });
