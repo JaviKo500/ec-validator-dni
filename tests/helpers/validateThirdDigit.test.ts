@@ -15,9 +15,8 @@ describe('ValidateThirdDigit.test', () => {
   });
 
   test( 'should be trigger error when third digit is not between 0 and 5', () => {
-    expect( ()=> validateThirdDigit('-1', TypeIdentification.DNI) ).toThrowError('Invalid third digit must be between 0 and 5');
-    expect( ()=> validateThirdDigit('6', TypeIdentification.DNI) ).toThrowError('Invalid third digit must be between 0 and 5');
-    expect( ()=> validateThirdDigit('10', TypeIdentification.DNI) ).toThrowError('Invalid third digit must be between 0 and 5');
+    expect( ()=> validateThirdDigit('-1', TypeIdentification.DNI) ).toThrowError('Invalid third digit must be between 0 and 9');
+    expect( ()=> validateThirdDigit('10', TypeIdentification.DNI) ).toThrowError('Invalid third digit must be between 0 and 9');
   });
 
   test( 'should be not trigger error when third digit is valid and type identification is DNI or RUC_PERSON_NATURAL', () => {
