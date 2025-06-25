@@ -4,7 +4,7 @@ import { TypeIdentification } from '../interfaces';
  * Validates the third digit of an identification number based on the type of identification document.
  * 
  * For DNI and Natural Person RUC:
- * - Third digit must be between 0 and 5
+ * - Third digit must be between 0 and 9
  * 
  * For Private Society RUC:
  * - Third digit must be 9
@@ -29,8 +29,8 @@ export const validateThirdDigit = (thirdDigit: string, typeIdentification: TypeI
   switch (typeIdentification) {
     case TypeIdentification.DNI:
     case TypeIdentification.RUC_PERSON_NATURAL:
-      if (code < 0 || code > 5) {
-        throw new Error('Invalid third digit must be between 0 and 5');
+      if (code < 0 || code > 9) {
+        throw new Error('Invalid third digit must be between 0 and 9');
       }
       break;
     case TypeIdentification.RUC_SOCIETY_PRIVATE:
